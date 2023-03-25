@@ -18,7 +18,7 @@ avg_hp=$(awk -F, '{total += $4} END {print total/NR}' pokemon.dat)
 avg_attack=$(awk -F, '{total += $5} END {print total/NR}' pokemon.dat)
 
 echo "Summary"
-echo "   File name: $(basename "$PWD")/pokemon.dat"
+echo "   File: $(basename "$PWD")/pokemon.dat"
 echo "   Total Pokemon: $total_records"
 echo "   Avg. HP: $avg_hp"
 echo "   Avg. Attack: $avg_attack"
