@@ -14,8 +14,8 @@
 
 total_records=$(wc -l < pokemon.dat)
 
-avg_hp=$(awk -F, '{total += $4} END {print total/NR}' pokemon.dat)
-avg_attack=$(awk -F, '{total += $5} END {print total/NR}' pokemon.dat)
+avg_hp=$(awk -F'\t' 'NR>1 {total += $6} END {print total/(NR-1)}' pokemon.dat)
+avg_attack=$(awk -F'\t' 'NR>1 {total += $7} END {print total/(NR-1)}' pokemon.dat)
 
 echo "Summary"
 echo "   File: $(basename "$PWD")/pokemon.dat"
